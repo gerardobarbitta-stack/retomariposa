@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7f7">
+  <meta name="description" content="Treinta días, pequeños gestos y una sorpresa para compartir en pareja.">
+  <title>Mariposa · 30 días para conectar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="butterfly" viewBox="0 0 48 48">
+      <path d="M24 24C20 11 8 7 6 14c-2 6 4 11 11 11C9 25 7 31 10 35c4 5 11 0 14-9 3 9 10 14 14 9 3-4 1-10-7-10 7 0 13-5 11-11-2-7-14-3-18 10Z" fill="currentColor"/>
+      <path d="M24 21v13m0-14c-1-4-3-6-5-7m5 7c1-4 3-6 5-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="lock" viewBox="0 0 24 24">
+      <rect x="5" y="10" width="14" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Mariposa, inicio">
+        <svg class="brand-icon" aria-hidden="true"><use href="#butterfly"></use></svg>
+        <span>mariposa<span class="brand-dot">.</span></span>
+      </a>
+      <span class="header-note"><span aria-hidden="true">♡</span> Un día a la vez</span>
+    </header>
+
+    <main>
+      <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <div class="eyebrow"><span class="eyebrow-star">✦</span> UN PEQUEÑO RITUAL PARA DOS</div>
+          <h1 id="welcome-title">El amor está en <em>los pequeños momentos.</em></h1>
+          <p>30 días, 30 sorpresas y muchas maneras de encontrarse de nuevo.</p>
+          <button id="start-button" class="button button-primary" type="button">Comenzar nuestra historia <span aria-hidden="true">↗</span></button>
+          <button id="resume-button" class="text-button resume-button" type="button" hidden>Volver a mi reto <span aria-hidden="true">→</span></button>
+          <p class="welcome-footnote"><span aria-hidden="true">✧</span> Sin cuentas, sin prisa. Solo ustedes dos.</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <span class="art-sparkle sparkle-one">✳</span><span class="art-sparkle sparkle-two">✦</span>
+          <div class="art-card">
+            <div class="art-card-top">UNA SORPRESA PARA TI <span>♡</span></div>
+            <svg class="art-butterfly"><use href="#butterfly"></use></svg>
+            <div class="art-card-text">Algo bonito<br><em>empieza aquí.</em></div>
+            <span class="art-card-bottom">RASPA · DESCUBRE · CONECTA</span>
+          </div>
+          <div class="art-tag"><span>♡</span> hecho para dos</div>
+        </div>
+      </section>
+
+      <section id="experience" class="experience" aria-labelledby="experience-title" hidden>
+        <div class="experience-intro">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-star">✦</span> SU HISTORIA, UN DÍA A LA VEZ</div>
+            <h1 id="experience-title">Un poquito más <em>cerca.</em></h1>
+            <p>Un pequeño gesto cada día, una historia más bonita entre los dos.</p>
+          </div>
+          <div class="progress-pill"><span aria-hidden="true">♡</span> <span id="progress-label"></span></div>
+        </div>
+
+        <div class="experience-layout">
+          <section class="daily-panel" aria-labelledby="day-heading">
+            <div class="panel-top"><span>SU MOMENTO DE HOY</span><span>✦ &nbsp; HECHO CON AMOR</span></div>
+            <div class="day-heading-row">
+              <div><p class="small-label">UNA SORPRESA PARA COMPARTIR</p><h2 id="day-heading"></h2></div>
+              <div class="day-badge" aria-hidden="true"><svg><use href="#butterfly"></use></svg></div>
+            </div>
+            <p class="day-description" id="day-description">Raspa con el dedo y descubre qué les espera.</p>
+            <div class="scratch-card" id="scratch-card">
+              <div class="challenge-content" id="challenge-content" aria-hidden="true" tabindex="-1">
+                <span class="challenge-sparkle" aria-hidden="true">✦</span>
+                <span class="challenge-label">EL RETO DE HOY</span>
+                <p id="challenge-text"></p>
+                <span class="challenge-footer">UN MOMENTO PARA USTEDES <span aria-hidden="true">♡</span></span>
+              </div>
+              <canvas id="scratch-canvas" aria-hidden="true"></canvas>
+              <div id="scratch-hint" class="scratch-hint" aria-hidden="true">
+                <svg><use href="#butterfly"></use></svg>
+                <span class="hint-title">Algo bonito te espera</span>
+                <span class="hint-instruction">✧ &nbsp; RASPA AQUÍ PARA DESCUBRIR &nbsp; ✧</span>
+              </div>
+              <div class="reveal-butterflies" aria-hidden="true">
+                <svg><use href="#butterfly"></use></svg><svg><use href="#butterfly"></use></svg><svg><use href="#butterfly"></use></svg>
+              </div>
+            </div>
+            <button type="button" id="reveal-button" class="text-button reveal-button">Revelar sin raspar <span aria-hidden="true">→</span></button>
+            <p id="revealed-message" class="revealed-message" hidden><span aria-hidden="true">✦</span> Lo bonito es compartirlo.</p>
+          </section>
+
+          <aside class="side-column">
+            <section class="calendar-panel" aria-labelledby="calendar-title">
+              <div class="calendar-heading"><div><p class="small-label">PASITO A PASITO</p><h2 id="calendar-title">Sus 30 días</h2></div><span class="calendar-heart" aria-hidden="true">♡</span></div>
+              <p>Una nueva sorpresa cada día.</p>
+              <div id="calendar" class="calendar-grid" aria-label="Días del reto"></div>
+              <div class="calendar-legend"><span><i class="legend-dot available"></i> Disponible</span><span><i class="legend-dot locked"></i> Por descubrir</span></div>
+              <p class="timezone-note">Un nuevo día comienza a las 00:00 UTC.</p>
+            </section>
+            <section class="share-panel" aria-labelledby="share-title">
+              <div class="share-icon" aria-hidden="true">↗</div>
+              <div><h2 id="share-title">Mejor juntos</h2><p>Comparte este enlace con tu persona favorita para vivir el mismo reto.</p></div>
+              <label class="sr-only" for="share-link">Enlace para compartir</label>
+              <input id="share-link" type="text" readonly>
+              <button id="copy-button" class="button button-secondary" type="button">Copiar enlace <span aria-hidden="true">↗</span></button>
+              <p class="share-note">Cada uno guarda su progreso en su dispositivo.</p>
+            </section>
+          </aside>
+        </div>
+      </section>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <footer><span>HECHO PARA QUERERSE BONITO</span><svg aria-hidden="true"><use href="#butterfly"></use></svg><span>UN DÍA A LA VEZ &nbsp; ♡</span></footer>
+  </div>
+</body>
+</html>
